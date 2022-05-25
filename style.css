@@ -1,0 +1,66 @@
+html * {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5vw;
+    margin: 0px;
+}
+
+.bg {
+    text-align: center;
+    
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 0px hsl(255, 100%, 50%);
+
+    background-color: rgb(50, 50, 50);
+}
+
+.link {
+    text-align: center;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 0px hsl(255, 100%, 50%);
+    
+    background-color: rgb(50, 50, 50);
+    padding: 10px;
+    
+    margin: 100px !important;
+    
+    border-radius: 10px;
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+a:hover {
+    zoom: 1.1;
+    background-color: rgb(20, 20, 20);
+}
+
+@keyframes color {
+    0% {
+        color: red;
+    }
+    16% {
+        color: orange;
+    }
+    32% {
+        color: yellow;
+    }
+    48% {
+        color: green;
+    }
+    64% {
+        color: lightblue;
+    }
+    80% {
+        color: darkblue;
+    }
+    100% {
+        color: violet;
+    }
+}
+
+.color {
+    animation: color 1s infinite;
+}
