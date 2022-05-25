@@ -70,17 +70,22 @@ function Submit(i)
     if(lp == 0)
     {
         document.getElementsByClassName("quiz")[0].style.display = "none";
-        document.getElementsByClassName("finish")[0].innerHTML = '<p>Twoj wynik to:' + String(all - wrongst) + "/" + String(all) + '<br>Dokladnosc: ' + String(Math.round(all / (all + wrong) * 10000) / 100) + '%<br>';
+        document.getElementsByClassName("finish")[0].innerHTML = '<p>Twoj wynik to:' + String(all - wrongst) + "/" + String(all) + '<br>Dokladnosc: ' + String(Math.round(all / (all + wrong) * 10000) / 100) + '%' + document.getElementsByClassName("finish")[0].innerHTML;
 
         if (localStorage.getItem("best") < Math.round(all / (all + wrong) * 10000) / 100)
         {
-            document.getElementsByClassName("finish")[0].innerHTML += 'Nowy Rekord!</p>';
+            document.getElementsByClassName("finish")[0].innerHTML = '<p>Nowy Rekord!</p>' + document.getElementsByClassName("finish")[0].innerHTML;
             localStorage.setItem("best", String(Math.round(all / (all + wrong) * 10000) / 100));
         }
         else
         {
-            document.getElementsByClassName("finish")[0].innerHTML += 'Aktualny rekord to: ' + localStorage.getItem("best") + '%</p>';
+            document.getElementsByClassName("finish")[0].innerHTML = '<p>Aktualny rekord to: ' + localStorage.getItem("best") + '%</p>' + document.getElementsByClassName("finish")[0].innerHTML;
         }
+
+        document.getElementsByClassName("buttons")[0].innerHTML += `
+        <a href="index.html">ZAGRAJ PONOWNIE</a>
+        <a href="../index.html">POWROT<a/>
+        `;
     }
 }
 
@@ -88,3 +93,5 @@ function blink(i)
 {
     document.getElementsByClassName("n" + String(i))[0].innerHTML = "●";
 }
+
+// opt = [1]; lp = 1
